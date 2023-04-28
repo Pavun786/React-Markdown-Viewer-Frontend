@@ -1,0 +1,23 @@
+.login__bg {
+    background-image: url(https://thumbs.dreamstime.com/b/login-password-38307774.jpg);
+    height: 92vh;
+    background-position:center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+.password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.link{
+    text-decoration: none;
+}
+.spinner{
+    width:30px;
+    height:30px;
+    background-color:black ;
+    color: blue;
+}

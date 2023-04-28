@@ -1,0 +1,135 @@
+
+.markdown{
+  display: flex;
+  flex-wrap: wrap;
+ 
+  flex-direction: row;
+  width:100%;
+  /* margin: 40px; */
+}
+.result{
+  width:45%;
+  overflow-x:scroll;
+  border-color: transparent;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  line-height: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* min-height: 30vh; */
+  height:100vh;
+  margin: 20px;
+  margin-top: 40px;
+  margin-left: 50px;
+
+}
+.division{
+  width:45%;
+ 
+  
+}
+.input{
+  /* resize: none; */
+  
+}
+
+.input {
+  border-color: transparent;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  line-height: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  min-height: 30vh;
+  width: 100%;
+  margin: 10px;
+}
+.preview{
+  width: 50%;
+}
+.fields{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+table,thead,tbody,th,td,tr{
+  border: 2px solid black;
+  padding: 30px;
+  border-collapse: collapse;
+}
+
+.viewcontainer{
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 50%;
+}
+
+.viewhead{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.threebtns{
+  display:flex;
+  gap:20px;
+}
+
+@media(max-width:450px) {
+  .input {
+    /* border-color: transparent;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    line-height: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 30vh; */
+    width: 420px;
+    background-color: orange;
+
+    
+  }
+  .markdown{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .result{
+    width: 420px;
+    margin: 0px auto;
+  }
+  .fields{
+    margin: 20px;
+  }
+  Navbar{
+    width: 450px;
+  }
+}
+
+@media (min-width:451px) and (max-width:650px) {
+  .input{
+    width: 870px;
+    background-color:yellow;
+  }
+  .result{
+    width:870px;
+  }
+  .fields{
+    display: flex;
+    flex-wrap: wrap;
+   flex-direction: row;
+   
+  }
+}
+
+@media (min-width:651px) and (max-width:1200px) {
+  .input{
+    width: 400px;
+    background-color:orchid;
+  }
+  .result{
+    width:400px;
+    background-color: aqua;
+  }
+ .markdown{
+   display: flex;
+   flex-wrap: wrap;
+ }
+}
