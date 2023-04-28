@@ -10,7 +10,7 @@ export function EditMarkdown() {
    const[editdata,setEditData]= useState(null)
 
    useEffect(()=>{
-    fetch(`${API}/${id}`,{
+    fetch(`${API}/players/${id}`,{
         method:"GET",
         headers:{
           "x-auth-token" : localStorage.getItem("token")
