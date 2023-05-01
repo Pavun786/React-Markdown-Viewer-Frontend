@@ -13,8 +13,8 @@ import {API} from "../globle"
 const passwordValidationSchema = yup.object({
     password: yup
       .string()
-      .min(8, "Need a bigger Email")
-      .required("A cool Email is in need")
+      .min(8, "Need a bigger password")
+      .required("A New Password is required")
       .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
     
      
@@ -87,8 +87,11 @@ function PasswordReset() {
               onChange={handleChange}
               onBlur={handleBlur}
               error={touched.password && errors.password}
-              helperText={touched.password && errors.password ? errors.password : null }
+              required
+
+              // helperText={touched.password && errors.password ? errors.password : null }
             />
+            <p style={{color:"red"}}>{touched.password && errors.password ? errors.password : null }</p>
           </Form.Group>
 
           <Button variant="primary" type="submit">

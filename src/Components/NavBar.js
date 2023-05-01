@@ -9,7 +9,7 @@ import {LogOut} from "../Auth/LogOut";
 function NavBar() {
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Container>
       <LinkContainer to="/">
         <Navbar.Brand>
@@ -18,18 +18,21 @@ function NavBar() {
       </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+        <LinkContainer to="/dashboard/home" style={{color:"white"}}>
+            <Nav.Link>React-Markdown</Nav.Link>
+            </LinkContainer>
           <Nav className="ms-auto">
             
-            <LinkContainer to="/dashboard/home">
+            <LinkContainer to="/dashboard/home" style={{color:"white"}}>
             <Nav.Link>Home</Nav.Link>
             </LinkContainer>
 
-            <LinkContainer to="/dashboard/get">
+            <LinkContainer to="/dashboard/get" style={{color:"white"}}>
             <Nav.Link>Projects</Nav.Link>
             </LinkContainer>
             
            
-            <Button variant="secondary" onClick={LogOut}>Logout</Button>
+            <Button variant="danger"  onClick={LogOut}>Logout</Button>
            
           </Nav>
         </Navbar.Collapse>

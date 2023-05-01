@@ -44,8 +44,8 @@ function Mardown() {
        }
     console.log(data)
     return (
-        <div>
-            <Link to="/dashboard/create"><Button variant="contained" >Create Project</Button></Link>
+        <div className="create">
+            <Link to="/dashboard/create"><Button variant="outlined" style={{color:"white",backgroundColor:"green"}} >Create Project</Button></Link>
             
             <Table striped bordered hover>
                 <thead>
@@ -63,7 +63,7 @@ function Mardown() {
                                 <td className="threebtns">
                                     <Link to={`/dashboard/view/${project._id}`}><PreviewIcon/></Link>
                                    <Link to={`/dashboard/edit/${project._id}`}><EditNoteIcon/></Link> 
-                                   <button onClick={()=>projectDelete(project._id)}> <DeleteIcon/></button>   
+                                    <DeleteIcon onClick={()=>projectDelete(project._id)}/>
                                 </td>
                             </tr>
 

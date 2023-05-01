@@ -14,7 +14,7 @@ const formValidationSchema = yup.object({
   email: yup
     .string()
     .min(8, "Need a bigger Email")
-    .required("A cool Email is in need")
+    .required("**A Valid E-mail is required**")
     .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
 
 });
@@ -81,8 +81,9 @@ function ForgotPassword() {
              onChange={handleChange}
              onBlur={handleBlur}
              error={touched.email && errors.email}
-              helperText={touched.email && errors.email ? errors.email : null }
+              
               />
+               <p style={{color:"red"}}>{touched.email && errors.email ? errors.email : null }</p>
              
             </Form.Group>
 

@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API } from "../globle";
+import Button from 'react-bootstrap/Button';
+
 
 
 export function EditMarkdown() {
@@ -54,6 +56,8 @@ export function EditMarkdown() {
     const [markdown, setMarkdown] = useState(editdata.markdown);
   const [title, setTitle] = useState(editdata.title)
   const [date, setDate] = useState(editdata.date)
+
+  const navigate = useNavigate();
   
   const onTextChange = e => setMarkdown(e.target.value);
 
@@ -73,9 +77,9 @@ export function EditMarkdown() {
         },
       body: JSON.stringify(data)
     };
-    fetch(`${API}/${editdata._id}`, requestOptions)
+    fetch(`${API}/players/${editdata._id}`, requestOptions)
       .then(response => response.json())
-      .then(res => console.log(res));
+      .then(()=>navigate("/dashboard/get"));
   };
 
 
@@ -84,7 +88,7 @@ export function EditMarkdown() {
         <div className="division">
             <div className="fields">
                 <div>
-                <label>Title</label>
+                <label>Title:</label>
                 <input 
                  type="text" 
                  value={title}
@@ -93,7 +97,7 @@ export function EditMarkdown() {
                 </div>
 
               <div>
-              <label>Date</label>
+              <label>Date:</label>
                   <input  
                   type="date"
                  value={date}
@@ -102,19 +106,24 @@ export function EditMarkdown() {
               </div>
                 </div>
         
-        <textarea rows="35" cols="85"
+        <textarea 
           className="input"
           value={markdown}
         //   onChange={(e) => setMarkdown(e.target.value)}
         onChange={onTextChange}
          required 
         > </textarea>
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <Button type="submit" variant="primary" onClick={handleSubmit} className="editbtn">Submit</Button>
         </div>
         
+        {/* <div className="preview">
+        <h4>Previewer</h4> */}
+       
         <article className="result">
-          <ReactMarkdown className="preview">{markdown}</ReactMarkdown>
+          <ReactMarkdown >{markdown}</ReactMarkdown>
         </article>
+        
+        {/* </div> */}
       </form>
     )
  }

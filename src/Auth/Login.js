@@ -103,6 +103,7 @@ function Login() {
              />
             <p style={{color:"red"}}> {touched.password && errors.password ? errors.password : null}</p>
             </Form.Group>
+           <p style={{color:"red"}}> {formState === "error" ?  "Invalid Email or Password" : null}</p>
            <div className="password">
             <Button variant={ formState === "error" ? "danger" : "success" } type="submit">
         { formState === "error" ? "Retry" : "Login" }

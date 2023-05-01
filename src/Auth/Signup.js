@@ -84,8 +84,8 @@ function Signup() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 error={touched.username && errors.username}
-                helperText={touched.username && errors.username ? errors.username : null }
-              />
+                 />
+                 <p style={{color:"red"}}>{touched.username && errors.username ? errors.username : null } </p> 
 
             </Form.Group>
 
@@ -99,8 +99,9 @@ function Signup() {
                onChange={handleChange}
                onBlur={handleBlur}
                error={touched.email && errors.email}
-                helperText={touched.email && errors.email ? errors.email : null }
               />
+              <p style={{color:"red"}}>{touched.email && errors.email ? errors.email : null }</p>
+              
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -116,8 +117,9 @@ function Signup() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 error={touched.password && errors.password}
-                helperText={touched.password && errors.password ? errors.password : null }
-              />
+               />
+              <p style={{color:"red"}}>{touched.password && errors.password ? errors.password : null }</p>
+           
             </Form.Group>
           
             <Button variant="primary" type="submit">

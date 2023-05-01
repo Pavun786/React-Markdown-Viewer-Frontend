@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { useNavigate } from "react-router-dom";
 import Article from "./Article";
 import { API } from "../globle";
+import Button from 'react-bootstrap/Button';
 
 
 function CreateMarkdown() {
@@ -38,85 +39,16 @@ function CreateMarkdown() {
       .then(()=> navigate("/dashboard/get"));
   };
 
-//   const {handleSubmit,values,handleChange,handleBlur,touched,errors} = useFormik({
-//     initialValues:{
-//         poster:"",
-//         name:"",
-//         summary: "",
-//         trailer:"",
-//         rating: ""
-//     },
 
-//     validationSchema:movieValidationSchema,
-    
-//     onSubmit:(newMovie)=>{
-//       console.log("Form values: ",values)
-//       addMovie(newMovie);
-//      }
-  
-//   })
- 
-
-
-//     const navigate =useNavigate()
- 
- 
-    
-//     const addMovie = (newMovie) => { 
-     
-  
-//     fetch(`${API}/movies`,{
-//       method:"POST",
-//       body:JSON.stringify(newMovie),
-//       headers:{"content-type": "application/json"},
-
-//      }).then(()=> navigate("/movies"))
-
-//     }
 
   return (
     
-      // <Card className="markdown">
-      //   <Card.Body className="division">
-      //       <div className="fields">
-      //           <div>
-      //           <label>Title</label>
-      //           <input 
-      //            type="text" 
-      //            value={title}
-      //            onChange={onTitleChange}
-      //            required /> 
-      //           </div>
-
-      //         <div>
-      //         <label>Date</label>
-      //             <input  
-      //             type="date"
-      //            value={date}
-      //            onChange={onDateChange}
-      //            required />
-      //         </div>
-      //           </div>
-        
-      //   <textarea rows="35" cols="85"
-      //     className="input"
-      //     value={markdown}
-      //   //   onChange={(e) => setMarkdown(e.target.value)}
-      //   onChange={onTextChange}
-      //    required 
-      //   > </textarea>
-      //   <button type="submit" onClick={handleSubmit}>Submit</button>
-      //   </Card.Body>
-        
-      //   <article className="result">
-      //     <ReactMarkdown className="preview">{markdown}</ReactMarkdown>
-      //   </article>
-      // </Card>
+      
       <div className="markdown">
       <div className="division">
           <div className="fields">
               <div>
-              <label>Title</label>
+              <label>Title:</label>
               <input 
                type="text" 
                value={title}
@@ -125,7 +57,7 @@ function CreateMarkdown() {
               </div>
 
             <div>
-            <label>Date</label>
+            <label>Date:</label>
                 <input  
                 type="date"
                value={date}
@@ -141,9 +73,9 @@ function CreateMarkdown() {
       onChange={onTextChange}
        required 
       > </textarea>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
+      <Button type="submit" onClick={handleSubmit} variant="primary" className="editbtn">Submit</Button>
       </div>
-      
+     
       <Article markdown={markdown}/>
      
     </div>

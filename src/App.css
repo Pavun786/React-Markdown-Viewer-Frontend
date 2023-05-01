@@ -1,27 +1,29 @@
 
 .markdown{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
  
   flex-direction: row;
   width:100%;
-  /* margin: 40px; */
+  background-color:black;
 }
 .result{
-  width:45%;
+  width: 45%;
   overflow-x:scroll;
   border-color: transparent;
   border-radius: 0.25rem;
   font-size: 1.2rem;
   line-height: 2;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  /* min-height: 30vh; */
+ 
   height:100vh;
   margin: 20px;
   margin-top: 40px;
   margin-left: 50px;
+  background-color:azure;
 
 }
+
 .division{
   width:45%;
  
@@ -35,20 +37,22 @@
 .input {
   border-color: transparent;
   border-radius: 0.25rem;
+  background-color:azure;
   font-size: 1.2rem;
   line-height: 2;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  min-height: 30vh;
+  height:100vh;
   width: 100%;
   margin: 10px;
+  
 }
-.preview{
-  width: 50%;
-}
+
 .fields{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  color:whitesmoke;
+  font-weight:bold;
 }
 table,thead,tbody,th,td,tr{
   border: 2px solid black;
@@ -72,64 +76,85 @@ table,thead,tbody,th,td,tr{
   display:flex;
   gap:20px;
 }
+.create{
+  margin-top: 20px;
+}
+.editbtn{
+  margin-left: 30px;
+  width: 150px;
+}
 
 @media(max-width:450px) {
-  .input {
-    /* border-color: transparent;
-    border-radius: 0.25rem;
-    font-size: 1.2rem;
-    line-height: 2;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    min-height: 30vh; */
-    width: 420px;
-    background-color: orange;
 
-    
-  }
   .markdown{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+  
   }
+  .input {
+   
+    background-color: orange;
+    object-fit: contain;
+    width: 200%;
+    
+  }
+ 
   .result{
-    width: 420px;
+    width:90%;
     margin: 0px auto;
+    object-fit: contain;
   }
   .fields{
     margin: 20px;
   }
-  Navbar{
-    width: 450px;
+  .editbtn{
+    width:100%;
+    margin-left: 40px;
+    margin: 20px;
   }
+ 
 }
 
 @media (min-width:451px) and (max-width:650px) {
+  
+  
+  
   .input{
-    width: 870px;
+    width:200%;
     background-color:yellow;
+    object-fit: contain;
   }
   .result{
-    width:870px;
+    width:620px;
+    margin-left: 10px;
   }
-  .fields{
-    display: flex;
-    flex-wrap: wrap;
-   flex-direction: row;
-   
+ .editbtn{
+    width:100%;
+    margin-left: 80px;
   }
 }
 
 @media (min-width:651px) and (max-width:1200px) {
   .input{
-    width: 400px;
+    width:100%;
     background-color:orchid;
+   margin-left: 40px;
   }
   .result{
-    width:400px;
-    background-color: aqua;
+    width:500px;
+    background-color: hsl(180, 100%, 50%);
+    object-fit: contain;
+   
+   
   }
- .markdown{
-   display: flex;
-   flex-wrap: wrap;
- }
+  .fields{
+    margin-left: 40px;
+  }
+
+  .editbtn{
+    width:50%;
+    margin-left:40px;
+  }
+ 
 }
